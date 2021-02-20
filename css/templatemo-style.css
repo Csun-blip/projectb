@@ -362,7 +362,7 @@ hr { border-top: 1px solid #111010; }
 	max-width: 555px;
 	overflow: hidden;
 }
-.tm-home-box-3-img-container { float: left; }
+.tm-home-box-3-img-container { float: left;  }
 .tm-home-box-3-info {
     height: 225px;
     max-width: 305px;

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +71,7 @@
                     <li>
                         <a href="feedback.php"><i class="fa fa-fw fa-desktop"></i> Feedback</a>
                     </li>
-                     <li>
+                    <li>
                         <a href="users.php"><i class="fa fa-fw fa-wrench"></i>Users</a>
                     </li>
 
@@ -92,101 +91,107 @@
 
 
 
-<div class="col-md-12">
+                <div class="col-md-12">
 
-<div class="row">
-<h1 class="page-header">
-  Edit Hotel
+                    <div class="row">
+                        <h1 class="page-header">
+                            Edit Hotel
 
-</h1>
-</div>
-  <?php
-    include "connection.php";
-    $id=$_GET['id'];
+                        </h1>
+                    </div>
+                    <?php
 
+                    include "connection.php";
 
-    //prepare the sql statement
-    $sql = "SELECT * FROM hoteldetails where SN='$id'";
-
-    //parse and execute the statement
-    $query = mysqli_query($connect,$sql);
-    $data = array();
-    while($row = mysqli_fetch_assoc($query))
-    {
-        array_push($data, $row);
-    }
-
-    foreach ($data as $key=>$value){
-        $name=$value['Title'];
-        $des=$value['Description'];
-        $img=$value['Image'];
-    }
-    ?>
-
-
-<form action="insertfile.php" method="post" enctype="multipart/form-data">
-
-
-<div class="col-md-8">
-
-<div class="form-group">
-    <label for="product-title">Hotel Name </label>
-        <input type="text"  name="hname" value="<?php echo $name?>" class="form-control">
-       
-    </div>
-
-
-    <div class="form-group">
-           <label for="product-title">Hotel Description</label>
-      <textarea name="hdes" value="<?php echo $des?>" cols="30" rows="10" class="form-control"></textarea>
-    </div>
+                    $id = $_GET['id'];
 
 
 
-    <!-- Hotel Image -->
-    <div class="form-group">
-        <label for="product-title">Hotel Image</label>
-        <input type="file"  value="<?php echo $img?>" name="image" id="image" accept="image/*">
-      
-    </div>
-
-    <div class="form-group">
-        <input type="submit" name="publish" class="btn btn-primary btn-lg" value="Publish">
-    </div>
 
 
+                    //prepare the sql statement
+                    $sql = "SELECT * FROM hoteldetails WHERE SN='$id'";
 
-<!--</aside>-->
-    <!--SIDEBAR-->
-</div>
+                    //parse and execute the statement
+                    $query = mysqli_query($connect, $sql);
+                    $data = array();
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        array_push($data, $row);
+                    }
 
-    
-</form>
+                    foreach ($data as $key => $value) {
+                        $name = $value['Title'];
+                        $des = $value['Description'];
+                        $img = $value['Image'];
+                    }
+                    ?>
 
 
-                
+                    <form action="insertfile.php" method="post" enctype="multipart/form-data">
 
 
+                        <div class="col-md-8">
+
+                            <div class="form-group">
+                                <label for="product-title">Hotel Name </label>
+                                <input type="text" name="hname" value="<?php echo $name ?>" class="form-control">
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="product-title">Hotel Description</label>
+                                <textarea name="hdes" cols="30" rows="10" class="form-control"><?php echo $des ?></textarea>
+                            </div>
+
+
+
+                            <!-- Hotel Image -->
+                            <div class="form-group">
+                                <label for="product-title">Hotel Image</label>
+                                <input type="file" value="<?php echo $img ?>" name="image" id="image" accept="image/*">
+
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" name="publish" class="btn btn-primary btn-lg" value="Publish">
+                            </div>
+
+
+
+                            <!--</aside>-->
+                            <!--SIDEBAR-->
+
+
+                        </div>
+
+
+                    </form>
+
+
+
+
+
+
+                </div>
+                <!-- /.container-fluid -->
 
             </div>
-            <!-- /.container-fluid -->
+            <!-- /#page-wrapper -->
 
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /#wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
+        <!-- Morris Charts JavaScript -->
+        <script src="js/plugins/morris/raphael.min.js"></script>
+        <script src="js/plugins/morris/morris.min.js"></script>
+        <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
 

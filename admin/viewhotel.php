@@ -130,7 +130,7 @@
               <img style="width: 100px;height: 100px" src="<?php echo $value['Image']; ?>">
             </td>
             <td>
-                <a href="change.php?id=<?php echo $value['SN'];?>" data-toggle="tooltip" title="change">Change</a><Br>
+                <a href="change.php?id=<?php echo $value['SN']; ?>" data-toggle="tooltip" title="change">Change</a><Br>
                 <a href="delete.php?del=<?php echo $value['SN']; ?>" title="delete">Delete</a>
             </td>
            
